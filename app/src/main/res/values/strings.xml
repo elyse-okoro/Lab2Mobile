@@ -1,3 +1,30 @@
 <resources>
-    <string name="app_name">Lab2Mobile</string>
+    <string name="app_name">Art Space</string>
+
+    <string name="button_previous">Previous</string>
+    <string name="button_next">Next</string>
+    <string name="button_previous_description">Show the previous painting</string>
+    <string name="button_next_description">Show the next painting</string>
+    <string name="artwork_position">%1$d of %2$d</string>
+    <string name="artwork_details">%1$d · %2$s</string>
+
+    <string name="museum_russian">State Russian Museum, Saint Petersburg</string>
+    <string name="museum_tretyakov">State Tretyakov Gallery, Moscow</string>
+
+    <string name="artist_aivazovsky">Ivan Aivazovsky</string>
+    <string name="artist_savrasov">Alexei Savrasov</string>
+    <string name="artist_kuindzhi">Arkhip Kuindzhi</string>
+    <string name="artist_shishkin_savitsky">Ivan Shishkin, Konstantin Savitsky</string>
+    <string name="artist_vasnetsov">Viktor Vasnetsov</string>
+
+    <string name="artwork_ninth_wave_title">The Ninth Wave</string>
+    <string name="artwork_ninth_wave_description">Painting: shipwreck survivors cling to a broken mast among huge waves while the sun breaks through the storm clouds</string>
+    <string name="artwork_rooks_title">The Rooks Have Come Back</string>
+    <string name="artwork_rooks_description">Painting: early spring in a village, rooks build nests in bare birch trees, a church and melting snow behind them</string>
+    <string name="artwork_moonlit_night_title">Moonlit Night on the Dnieper</string>
+    <string name="artwork_moonlit_night_description">Painting: a dark river at night, the moon lays a bright green path on the water</string>
+    <string name="artwork_pine_forest_title">Morning in a Pine Forest</string>
+    <string name="artwork_pine_forest_description">Painting: a mother bear and three cubs play on a fallen pine tree in the morning mist</string>
+    <string name="artwork_bogatyri_title">Bogatyrs</string>
+    <string name="artwork_bogatyri_description">Painting: three legendary knights on horseback keep watch over the steppe</string>
 </resources>
