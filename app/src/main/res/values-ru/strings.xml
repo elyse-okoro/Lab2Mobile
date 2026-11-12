@@ -18,13 +18,13 @@
     <string name="artist_vasnetsov">Виктор Васнецов</string>
 
     <string name="artwork_ninth_wave_title">Девятый вал</string>
-    <string name="artwork_ninth_wave_description">Картина: моряки держатся за обломок мачты среди огромных волн, сквозь штормовые тучи пробивается солнце</string>
+    <string name="artwork_ninth_wave_description">Картина: люди, уцелевшие в кораблекрушении, держатся за обломок мачты среди огромных волн, сквозь штормовые тучи пробивается солнце</string>
     <string name="artwork_rooks_title">Грачи прилетели</string>
     <string name="artwork_rooks_description">Картина: ранняя весна в деревне, грачи вьют гнёзда на голых берёзах, за ними церковь и тающий снег</string>
     <string name="artwork_moonlit_night_title">Лунная ночь на Днепре</string>
     <string name="artwork_moonlit_night_description">Картина: тёмная ночная река, луна прокладывает по воде яркую зелёную дорожку</string>
     <string name="artwork_pine_forest_title">Утро в сосновом лесу</string>
-    <string name="artwork_pine_forest_description">Картина: медведица с тремя медвежатами на поваленной сосне в утреннем тумане</string>
+    <string name="artwork_pine_forest_description">Картина: медведица и три медвежонка играют на поваленной сосне в утреннем тумане</string>
     <string name="artwork_bogatyri_title">Богатыри</string>
     <string name="artwork_bogatyri_description">Картина: три богатыря на конях стоят в дозоре посреди степи</string>
 </resources>
