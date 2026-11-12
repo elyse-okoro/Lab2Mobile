@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/screen_padding"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/column_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/land_image_fraction" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/artwork_frame"
+        style="?attr/materialCardViewElevatedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/block_spacing"
+        app:cardBackgroundColor="@color/frame_background"
+        app:cardCornerRadius="@dimen/frame_corner_radius"
+        app:cardElevation="@dimen/frame_elevation"
+        app:layout_constraintDimensionRatio="3:2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/column_guide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- описание картины для TalkBack ставит MainActivity вместе с самой картиной -->
+        <ImageView
+            android:id="@+id/artwork_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/frame_padding"
+            android:scaleType="fitCenter"
+            tools:contentDescription="@string/artwork_ninth_wave_description"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/aivazovsky_ninth_wave" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/info_card"
+        style="?attr/materialCardViewFilledStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/block_spacing"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toTopOf="@id/position_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/column_guide"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <!-- на низком экране и при крупном шрифте подпись прокручивается, а кнопки остаются на экране -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:accessibilityLiveRegion="polite"
+                android:orientation="vertical"
+                android:padding="@dimen/info_padding">
+
+                <TextView
+                    android:id="@+id/artwork_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                    android:textSize="@dimen/title_text_size"
+                    tools:text="@string/artwork_ninth_wave_title" />
+
+                <TextView
+                    android:id="@+id/artwork_artist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/info_line_spacing"
+                    android:textAppearance="?attr/textAppearanceBodyLarge"
+                    android:textSize="@dimen/artist_text_size"
+                    android:textStyle="bold"
+                    tools:text="@string/artist_aivazovsky" />
+
+                <TextView
+                    android:id="@+id/artwork_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="@dimen/details_text_size"
+                    tools:text="@string/museum_russian" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/position_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/block_spacing"
+        android:layout_marginBottom="@dimen/block_spacing"
+        android:textAppearance="?attr/textAppearanceLabelLarge"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:layout_constraintBottom_toTopOf="@id/previous_button"
+        app:layout_constraintEnd_toEndOf="@id/info_card"
+        app:layout_constraintStart_toStartOf="@id/info_card"
+        app:layout_constraintTop_toBottomOf="@id/info_card" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/previous_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:maxLines="1"
+        android:paddingStart="@dimen/button_padding_horizontal"
+        android:paddingEnd="@dimen/button_padding_horizontal"
+        app:autoSizeMaxTextSize="@dimen/button_text_size"
+        app:autoSizeMinTextSize="@dimen/button_text_min_size"
+        app:autoSizeStepGranularity="@dimen/button_text_step"
+        app:autoSizeTextType="uniform"
+        app:iconPadding="@dimen/button_icon_padding"
+        android:layout_marginEnd="@dimen/button_spacing"
+        android:contentDescription="@string/button_previous_description"
+        android:text="@string/button_previous"
+        app:icon="@drawable/ic_chevron_left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/next_button"
+        app:layout_constraintStart_toStartOf="@id/info_card"
+        app:layout_constraintTop_toBottomOf="@id/position_text" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/next_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:maxLines="1"
+        android:paddingStart="@dimen/button_padding_horizontal"
+        android:paddingEnd="@dimen/button_padding_horizontal"
+        app:autoSizeMaxTextSize="@dimen/button_text_size"
+        app:autoSizeMinTextSize="@dimen/button_text_min_size"
+        app:autoSizeStepGranularity="@dimen/button_text_step"
+        app:autoSizeTextType="uniform"
+        app:iconPadding="@dimen/button_icon_padding"
+        android:layout_marginStart="@dimen/button_spacing"
+        android:contentDescription="@string/button_next_description"
+        android:text="@string/button_next"
+        app:icon="@drawable/ic_chevron_right"
+        app:iconGravity="end"
+        app:layout_constraintBottom_toBottomOf="@id/previous_button"
+        app:layout_constraintEnd_toEndOf="@id/info_card"
+        app:layout_constraintStart_toEndOf="@id/previous_button"
+        app:layout_constraintTop_toTopOf="@id/previous_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
