@@ -30,6 +30,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <!-- описание картины для TalkBack ставит MainActivity вместе с самой картиной -->
         <ImageView
             android:id="@+id/artwork_image"
             android:layout_width="match_parent"
@@ -37,6 +38,7 @@
             android:padding="@dimen/frame_padding"
             android:scaleType="fitCenter"
             tools:contentDescription="@string/artwork_ninth_wave_description"
+            tools:ignore="ContentDescription"
             tools:src="@drawable/aivazovsky_ninth_wave" />
 
     </com.google.android.material.card.MaterialCardView>
@@ -47,6 +49,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/block_spacing"
+        app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toTopOf="@id/position_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/column_guide"
@@ -54,41 +57,48 @@
         app:layout_constraintVertical_bias="0.3"
         app:layout_constraintVertical_chainStyle="packed">
 
-        <LinearLayout
+        <!-- на низком экране и при крупном шрифте подпись прокручивается, а кнопки остаются на экране -->
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:accessibilityLiveRegion="polite"
-            android:orientation="vertical"
-            android:padding="@dimen/info_padding">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/artwork_title"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceHeadlineSmall"
-                android:textSize="@dimen/title_text_size"
-                tools:text="@string/artwork_ninth_wave_title" />
+                android:accessibilityLiveRegion="polite"
+                android:orientation="vertical"
+                android:padding="@dimen/info_padding">
 
-            <TextView
-                android:id="@+id/artwork_artist"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/info_line_spacing"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:textSize="@dimen/artist_text_size"
-                android:textStyle="bold"
-                tools:text="@string/artist_aivazovsky" />
+                <TextView
+                    android:id="@+id/artwork_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                    android:textSize="@dimen/title_text_size"
+                    tools:text="@string/artwork_ninth_wave_title" />
 
-            <TextView
-                android:id="@+id/artwork_details"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?attr/colorOnSurfaceVariant"
-                android:textSize="@dimen/details_text_size"
-                tools:text="@string/museum_russian" />
+                <TextView
+                    android:id="@+id/artwork_artist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/info_line_spacing"
+                    android:textAppearance="?attr/textAppearanceBodyLarge"
+                    android:textSize="@dimen/artist_text_size"
+                    android:textStyle="bold"
+                    tools:text="@string/artist_aivazovsky" />
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/artwork_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="@dimen/details_text_size"
+                    tools:text="@string/museum_russian" />
+
+            </LinearLayout>
+
+        </ScrollView>
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -114,7 +124,7 @@
         android:paddingEnd="@dimen/button_padding_horizontal"
         app:autoSizeMaxTextSize="@dimen/button_text_size"
         app:autoSizeMinTextSize="@dimen/button_text_min_size"
-        app:autoSizeStepGranularity="1sp"
+        app:autoSizeStepGranularity="@dimen/button_text_step"
         app:autoSizeTextType="uniform"
         app:iconPadding="@dimen/button_icon_padding"
         android:layout_marginEnd="@dimen/button_spacing"
@@ -135,7 +145,7 @@
         android:paddingEnd="@dimen/button_padding_horizontal"
         app:autoSizeMaxTextSize="@dimen/button_text_size"
         app:autoSizeMinTextSize="@dimen/button_text_min_size"
-        app:autoSizeStepGranularity="1sp"
+        app:autoSizeStepGranularity="@dimen/button_text_step"
         app:autoSizeTextType="uniform"
         app:iconPadding="@dimen/button_icon_padding"
         android:layout_marginStart="@dimen/button_spacing"

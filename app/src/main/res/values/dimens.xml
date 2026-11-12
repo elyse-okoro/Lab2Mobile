@@ -21,6 +21,7 @@
     <dimen name="button_icon_padding">4dp</dimen>
     <dimen name="button_text_size">14sp</dimen>
     <dimen name="button_text_min_size">10sp</dimen>
+    <dimen name="button_text_step">1sp</dimen>
 
     <!-- доля ширины под картину в альбомной ориентации -->
     <item name="land_image_fraction" format="float" type="dimen">0.58</item>
